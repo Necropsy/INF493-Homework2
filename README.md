@@ -1,5 +1,5 @@
 # INF493-Homework2
-Segundo trabalho da disciplide de Mineração de Dados
+Segundo trabalho da disciplina de Mineração de Dados
 
 # Trabalho prático II - Classificação
 
