@@ -1,0 +1,14 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}
+\contentsline {chapter}{\chapternumberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{4}{chapter.1}
+\contentsline {chapter}{\chapternumberline {2}Objetivos}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Objetivos Espec\IeC {\'\i }ficos}{5}{section.2.1}
+\contentsline {chapter}{\chapternumberline {3}M\IeC {\'e}todos}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}An\IeC {\'a}lise e Tratamento dos Dados}{6}{section.3.1}
+\contentsline {section}{\numberline {3.2}SVM - Support Vector Machines}{6}{section.3.2}
+\contentsline {section}{\numberline {3.3}DT - Decision Tree}{7}{section.3.3}
+\contentsline {section}{\numberline {3.4}RF - Random Forest}{8}{section.3.4}
+\contentsline {section}{\numberline {3.5}NB - Naive Bayes}{8}{section.3.5}
+\contentsline {chapter}{\chapternumberline {4}Conclus\IeC {\~a}o}{9}{chapter.4}
+\vspace {\cftbeforepartskip }
+\contentsline {chapter}{Refer\^encias}{10}{section*.6}

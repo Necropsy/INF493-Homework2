@@ -1,0 +1,260 @@
+%%==============================================================
+%% Modelo de Trabalho
+%% Universidade Federal de Viçosa - Campus Viçosa
+%% Adaptação do Arquivo de geração de Monografias
+%% escrito por Rodrigo Smarzaro (smarzaro@ufv.br)
+%% Autor: Elcio P. S. Junior (elcio.souza@ufv.br)
+%% Última versão Julho/2018
+%% Arquivo em formato UTF-8
+%% Compilar com pdftex
+%%==============================================================
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				    % tamanho da fonte
+	openright,			    % capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			    % para impressão só no anverso. Oposto a twoside
+	a4paper,			    % tamanho do papel.
+    % -- opções do pacote abntex2 --
+    % chapter=TITLE,        % Títulos em maiúsculas
+    sumario=tradicional,    % Sumário padrão memoir 
+    % -- opções do pacote babel --
+	english,			    % idioma adicional para hifenização
+	brazil,				    % idioma principal do documento
+	]{abntex2}              
+
+
+
+% Pacotes fundamentais
+\usepackage{abntex2-UFV}        % Personalização para a Universidade Federal de Viçosa
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte de saída
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{booktabs}           % \toprule, \midrule e \bottomrule para tabelas
+% Sistema autor-data com títulos nas referências em negrito
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	
+
+
+% ---
+% CONFIGURAÇÕES DE PACOTES
+% ---
+
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\titulo{Trabalho de Mineração de Dados: Técnicas de Aprendizado Supervisionado sobre um Dataset}
+\autor{Elcio Pereira de Souza Junior}
+\local{Viçosa}
+\data{2018}
+\orientador{Giovanni Comarela}    % redefinido no abntex2-UFV para aceitar Instituição (default = UFV-CRP)
+
+%\coorientador{Nome do Coorientador}
+\instituicao{Universidade Federal de Viçosa}
+
+\campus{\emph{Campus} Viçosa}	         % pacote abntex2-UFV
+\curso{Ciência da Computação}               % pacote abntex2-UFV
+
+% O preambulo deve conter o tipo do trabalho, o objetivo,
+% o nome da instituição e a área de concentração
+\preambulo{Trabalho apresentado à Universidade Federal de Viçosa, como parte das exigências para a a aprovação na disciplina de Mineração de Dados}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% informações para o arquivo pdf de saída
+% Interessante alterar a cor dos links para preto(black)
+% na versão final para imprimir
+\makeatletter
+\hypersetup{
+        % metadados
+		pdftitle={\@title},
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		colorlinks=true,   % false: links em frame; true: links coloridos
+    	linkcolor=black,   % cor dos links no documento
+    	citecolor=blue,    % cor dos links para a bibliografia
+    	filecolor=magenta, % cor dos links para arquivos
+		urlcolor=blue,     % cor dos links para sites
+		bookmarksdepth=4   % profundidade do sumário do PDF
+}
+\makeatother
+% ---
+
+\begin{document}
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+
+% Capa
+\imprimircapa
+
+% Folha de rosto
+%\imprimirfolhaderosto
+% ---
+
+% RESUMOS
+
+% resumo em português
+\begin{resumo}
+ \noindent
+%Insira o resumo aqui
+O objetivo deste trabalho é praticar os conceitos de aprendizado supervisionado que foram vistos em sala. Neste projeto, foram utilizadas as principais técnicas de classificação juntamente com a API sklearn (scikit-learn), a fim de comparar os resultados obtidos sobre um dataset inicialmente desconhecido. A linguagem de programação escolhida para este trabalho foi o Python3.
+ \vspace{\onelineskip}
+
+ \noindent
+ \textbf{Palavras-chaves}: Mineração, Dados, Aprendizado, Supervisionado, Dataset.
+\end{resumo}
+
+% Lista de siglas e abreviaturas (opcional)
+% sintaxe: \item [sigla] Descrição da sigla
+
+\begin{siglas}
+\item[UFV] Universidade Federal de Viçosa
+\item[SVM] Support Vector Machines
+\item[RF] Random Forest Classifier
+\item[NB] Naive Bayes (Bernoulli)
+\item[KNN] K-Nearest Neighbors
+\item[DT] Decision Trees
+\end{siglas}
+
+% inserir o sumario
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+
+%Modifique a estrutura dos capítulos e seções de acordo com a necessidade do seu trabalho
+\chapter{Introdução}\label{sec:introducao}
+O que uma simples ida ao mercado e observações de corpos celestes têm em comum? A geração de enormes bases de dados, e não são apenas estas atividades que tanto se diferem em sua prática que tem esta habilidade. Atualmente vivemos em uma sociedade conectada, onde cada ação está ou pode ser armazenada, e foi sobre este crescente volume de dados, que se faz necessária a utilização de técnicas tanto computacionais como estatísticas para a extração de conhecimento. Em meio a um emaranhado de informações, pesquisas científicas e grandes conglomerados comerciais se beneficiam por meio da Mineração de Dados. 
+\chapter{Objetivos}\label{sec:objetivos}
+Este trabalho é parte do conjunto de avaliações da disciplina de Mineração de Dados da turma de 2018/2, e tem por objetivo uma abordagem prática dos conceitos abordados em sala de aula ao longo do semestre letivo.
+
+\section{Objetivos Específicos}\label{sec:ObjetivosEspec}
+O objetivo inicial deste trabalho é a extração de conhecimento (predição) sob um dataset inicialmente desconhecido (origem/informação), utilizando-se apenas dos métodos que foram discutidos na disciplina de Mineração de Dados - INF493, para os modelos que foram implementados, como não era disponível informações sob o domínio dos dados, fez-se necessária apenas a utilização de métricas como f1 score e acurácia para validação e comparação entre os modelos, estes serão apresentadas a frente com mais detalhes.
+Os códigos foram implementados na linguagem Python3 e foi utilizada a API Sklearn desenvolvida especificamente para análise e mineração de dados. O dataset juntamente com os códigos, que são mencionados, podem ser adquiridos na página \url{https://github.com/Necropsy/INF493-Homework2.git}.
+
+\chapter{Métodos}\label{sec:metodos}
+Neste capítulo, apresentaremos as estratégias empregadas e que demonstraram os melhores resultados junto ao dataset fornecido. As características básicas de cada método serão apenas mencionadas neste trabalho, visto que o detalhamento das mesmas não faz parte deste escopo. Para mais informações a respeito de cada uma destas, as referências serão fornecidas.
+
+\textit{\textbf{Observação:} Ao final deste trabalho será apresentada uma tabela com os melhores resultados obtidos por cada uma das técnicas juntamente com os parâmetros utilizados.}
+
+\section{Análise e Tratamento dos Dados}\label{sec:tratamentoDados}
+O dataset fornecido é composto por 4 arquivos onde 2 apresentam o conjunto de treinamento (\textit{train\_X.csv} e \textit{train\_y.csv}), um o conjunto de dados que deve ser predito (\textit{test\_X.csv}) e outro com um exemplo de como a resposta deve ser apresentada (\textit{test\_example\_y.csv}).
+Antes de aplicar os métodos, foram necessários alguns ajustes em relação a representação dos dados dentro de nosso sistema, algumas \textit{features} são do tipo numérico e outras categóricas, além destas questões, alguns dos dados numéricos divergiam de outros em ordem de grandeza, o que pode influenciar os classificadores. Para resolver estes problemas, os dados categóricos do nosso conjunto foram binarizados e após isto, todos os dados foram normalizados (os id's também foram removidos).
+Em seguida, após a binarização e a linearização, foram selecionadas em nosso conjunto de teste 75\% das amostras para treinamento e os outros 25\% para validação dos classificadores.
+A seguir, cada uma destas secções (sobre os métodos aplicados), discutirá um ponto de vista pessoal em relação ao desempenho do método e como este se portou em relação ao dataset.
+
+
+\section{SVM - Support Vector Machines}\label{sec:SVM}
+Um das primeiras técnicas utilizadas foi o SVM.
+Algumas de suas vantagens são (\textit{dados removidos da página oficial da API}):
+\begin{itemize}
+\item Eficaz em espaços dimensionais elevados;
+\item Ainda é eficaz nos casos em que o número de dimensões é maior que o número de amostras;
+\item Usa um subconjunto de pontos de treinamento na função de decisão (chamados vetores de suporte), portanto, também é eficiente em termos de memória;
+\item Versátil: diferentes funções do Kernel podem ser especificadas para a função de decisão. Os kernels comuns são fornecidos, mas também é possível especificar kernels customizados.
+\end{itemize}
+Dentre as características citadas como positivas, podemos destacar alguns pontos negativos que foram observados durante a implementação do mesmo mediante ao dataset utilizado. Foi possível perceber que dentre todos os métodos, o SVM apresentou menor performance. Acreditamos que parte desta desvantagem do SVM em relação aos outros, se deve pelo fato da dimensão deste conjunto de dados não ser tão elevada, assim como o número de amostras bem elevado em relação ao número de dimensões.
+
+\section{DT - Decision Tree}\label{sec:DT}
+Uma das técnicas mais interessantes que foram aplicadas neste trabalho, originando a idéia de se usar a técnica Random Forest. Uma idéia interessante que surgiu durante este experimento foi, a utilização do formato de visualização dos dados (disponíveis pela árvore de decisão), a fim de determinar quais \textit{features} tinham maior relevância em comparação com as demais, de posse destas informações, seria possível determinar novos pesos para estes dados, ou até mesmo remover os outros com o intuito de simplificar o modelo.
+
+Algumas vantagens das árvores de decisão são:
+\begin{itemize}
+\item Simples de entender e interpretar;
+\item Requer pouca preparação de dados;
+\item O custo de usar a árvore (ou seja, prever dados) é logarítmico no número de pontos de dados usados para treinar a árvore;
+\item Capaz de lidar com dados numéricos e categóricos;
+\item Capaz de lidar com problemas de várias saídas;
+\item Usa um modelo de caixa branca;
+\item Possível validar um modelo usando testes estatísticos. Isso torna possível explicar a confiabilidade do modelo.
+\item Funciona bem, mesmo que suas suposições sejam de algum modo violadas pelo verdadeiro modelo do qual os dados foram gerados.
+\end{itemize}
+
+\section{RF - Random Forest}\label{sec:RF}
+Motivado anteriormente pelo uso da técnica Decision Tree, foi implementado o método Random Forest, que superficialmente é uma generalização do DT. Uma ressalva deve ser feita em relação a esta estratégia, para florestas muito densas, o consumo de memória na máquina será consideravelmente elevado.
+
+\section{NB - Naive Bayes}\label{sec:NB}
+Este é baseado na aplicação do teorema de Bayes com a suposição \textit{"ingênua"} de independência entre cada par de recursos. Este se apresentou bem, seu tempo de execução aparenta ser baixo, porém, algumas das métricas ainda se demonstraram baixas em relação às já coletadas anteriormente.
+
+%Conclusão
+\chapter{Conclusão}\label{sec:conclusão}
+De posse da \textit{Tabela 1}, onde são apresentados os resultados, é perceptível a vantagem do uso da técnica de Random Forest nesta base de dados, essa foi a que melhor se adaptou ao dataset em nossos testes. Na Tabela 2 temos a definição dos parâmetros que foram utilizados para obtenção destes dados, assim como o notebook que acompanha este documento apresenta toda a implementação até aqui mencionada, como também alguns dados adicionais em relação o dataset e os classificadores.
+
+\textbf{\textit{Observação:}} Cada uma das funções aqui mencionadas, como a utilização de seu parâmetros, podem ser vistas em funcionamento junto ao notebook python que acompanha este trabalho.
+
+\begin{table}[htbp]
+  \centering
+    \caption[Tabela de Resultados]{Tabela de Resultados}
+    \label{tab:resultados}
+    \begin{tabular}{lccccc} %|c|c|c|c|c
+    \toprule
+    \textbf{Método} & \textbf{Predição} & \textbf{Precision} & \textbf{F1\_Score} & \textbf{Acurácia} \\
+    \midrule
+        SVM & 0.71990 & 0.47449 & 0.57199 & 0.82558 \\
+        Decision Tree & 0.61341 & 0.62955 & 0.62138 & 0.81156 \\
+        \textit{\textbf{Random Forest}} & \textit{\textbf{0.73783}} & \textit{\textbf{0.63806}} & \textbf{\textit{0.68432}} & \textbf{\textit{0.85541}} \\
+        Naive Bayes & 0.53078 & 0.79231 & 0.63570 & 0.77695 \\
+    \bottomrule
+    \end{tabular}%
+    \fonte{Próprio Autor}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+    \caption[Tabela de Parâmetros]{Tabela de Parâmetros}
+    \label{tab:parametros}
+    \begin{tabular}{lcc} %|c|c
+    \toprule
+    \textbf{Método} & \textbf{Parâmetros} \\
+    \midrule
+        SVM & kernel="rbf", C=0.1, degree=2 \\
+        Decision Tree & \-- \\
+        \textit{\textbf{Random Forest}} & n\_estimators=10000, criterion='entropy', warm\_start=True \\
+        Naive Bayes & alpha=0.01, binarize=0.4, class\_prior=None, fit\_prior=True \\
+    \bottomrule
+    \end{tabular}%
+    \fonte{Próprio Autor}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+    \caption[Matriz de Confusão]{Matriz de Confusão}
+    \label{tab:matriz}
+	\begin{tabular}{llr}
+		\hline
+		\multicolumn{3}{c}{Target} \\
+		\cline{2-3}
+			Predict    & True & False \\
+		\hline
+			True      & 22662    & 1      \\
+			False     & 1        & 7502       \\
+		\hline
+	\end{tabular}
+    \fonte{Próprio Autor}
+\end{table}%
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% Referências bibliográficas
+
+\bibliography{referencias}
+
+\end{document}

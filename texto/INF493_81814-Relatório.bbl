@@ -1,0 +1,14 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem[developers 2018]{Sklearn}
+\abntrefinfo{developers}{DEVELOPERS}{2018}
+{DEVELOPERS scikit-learn. \textbf{API Reference}.
+[S.l.], 2018. Dispon{\'\i}vel em:
+  \url{http://scikit-learn.org/stable/modules/classes.html\#api-reference}.}
+
+\end{thebibliography}
